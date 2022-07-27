@@ -58,6 +58,13 @@ nav ul li{
    background-image: url('assets/images/Bg2.png');
 }
 
+.songList {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
 .bottom{
     position: sticky;
     bottom: 0;
@@ -84,7 +91,7 @@ nav ul li{
 
 .songItemContainer{
     margin-top: 60px;
-    width: 125%;
+    width: 100%;
 }
 
 .songItem{
@@ -125,11 +132,36 @@ nav ul li{
     transition: opacity 0.3s ease-in;
 }
 
-@media only screen and (max-width: 1100px) {
+@media (max-width: 1023px) {
     body {
         background-color: rgba(237, 227, 227, 0.817);
     }
+    .container {
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 96px 0 48px;
+    }
+    #h1 {
+        font-size: 30px;
+        line-height: 32px;
+    }
     .songItemContainer{
         width: 100%;
+        margin-top: 28px;
+    }
+    .songList {
+        width: 100%;
+        margin: 0;
+    }
+    .songItem {
+        display: flex;
+        align-items: center;
+    }
+    .icons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
     }
   }
