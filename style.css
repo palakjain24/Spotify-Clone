@@ -129,4 +129,7 @@ nav ul li{
     body {
         background-color: rgba(237, 227, 227, 0.817);
     }
+    .songItemContainer{
+        width: 100%;
+    }
   }
