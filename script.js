@@ -35,7 +35,7 @@ setTimeout(() => {
         element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
         element.getElementsByClassName("timestamp")[0].innerText = songs[i].duration; 
     });
-}, 150);
+}, 500);
  
 
 // Handle play/pause click
