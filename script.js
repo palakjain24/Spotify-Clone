@@ -10,22 +10,32 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs=[
-    {songName:"Aankhon se ", filePath: "assets/songs/Aankhon-Se-Batana.mp3", coverPath:"assets/covers/Aankhon.jpg"},
-    {songName:"Chitta Kukkad", filePath: "assets/songs/Chitta.mp3", coverPath:"assets/covers/chitta.jpg"},
-    {songName:"Halka Halka", filePath: "assets/songs/Halka Halka.mp3", coverPath:"assets/covers/halka halka.jpg"},
-    {songName:"Kabhi Tumhe", filePath: "assets/songs/Kabhi Tumhe.mp3", coverPath:"assets/covers/kbhi tumhe.jpg"},
-    {songName:"Kahani", filePath: "assets/songs/Kahani.mp3", coverPath:"assets/covers/kahani.jpg"},
-    {songName:"Mar Jaayen", filePath: "assets/songs/Mar Jaayen.mp3", coverPath:"assets/covers/mar jaayen.jpg"},
-    {songName:"Mere Yaara", filePath: "assets/songs/Mere Yaara.mp3", coverPath:"assets/covers/mere yaara.jpg"},
-    {songName:"Rait Zara", filePath: "assets/songs/Rait Zara.mp3", coverPath:"assets/covers/rait zara.jpg"},
-    {songName:"Wafa Ne Bewafai", filePath: "assets/songs/Wafa Ne Bewafai.mp3", coverPath:"assets/covers/wafa ne bewafai.jpg"},
-    {songName:"Yeh Aaina", filePath: "assets/songs/Yeh Aaina.mp3", coverPath:"assets/covers/ye aaina.jpg"}
+    {songName:"Aankhon se ", filePath: "assets/songs/Aankhon-Se-Batana.mp3", coverPath:"assets/covers/Aankhon.jpg", duration: 0},
+    {songName:"Chitta Kukkad", filePath: "assets/songs/Chitta.mp3", coverPath:"assets/covers/chitta.jpg", duration: 0},
+    {songName:"Halka Halka", filePath: "assets/songs/Halka Halka.mp3", coverPath:"assets/covers/halka halka.jpg", duration: 0},
+    {songName:"Kabhi Tumhe", filePath: "assets/songs/Kabhi Tumhe.mp3", coverPath:"assets/covers/kbhi tumhe.jpg", duration: 0},
+    {songName:"Kahani", filePath: "assets/songs/Kahani.mp3", coverPath:"assets/covers/kahani.jpg", duration: 0},
+    {songName:"Mar Jaayen", filePath: "assets/songs/Mar Jaayen.mp3", coverPath:"assets/covers/mar jaayen.jpg", duration: 0},
+    {songName:"Mere Yaara", filePath: "assets/songs/Mere Yaara.mp3", coverPath:"assets/covers/mere yaara.jpg", duration: 0},
+    {songName:"Rait Zara", filePath: "assets/songs/Rait Zara.mp3", coverPath:"assets/covers/rait zara.jpg", duration: 0},
+    {songName:"Wafa Ne Bewafai", filePath: "assets/songs/Wafa Ne Bewafai.mp3", coverPath:"assets/covers/wafa ne bewafai.jpg", duration: 0},
+    {songName:"Yeh Aaina", filePath: "assets/songs/Yeh Aaina.mp3", coverPath:"assets/covers/ye aaina.jpg", duration: 0}
 ]
 
-songItems.forEach((element, i)=> { 
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
-    element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
-})
+songs.map((list, index) => {
+    let audio_duration = new Audio(list.filePath);
+    setTimeout(() => {
+        songs[index].duration = (audio_duration.duration/60).toPrecision(3);
+    }, 100);
+});
+
+setTimeout(() => {
+    songItems.forEach((element, i)=> { 
+        element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
+        element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
+        element.getElementsByClassName("timestamp")[0].innerText = songs[i].duration; 
+    });
+}, 150);
  
 
 // Handle play/pause click
