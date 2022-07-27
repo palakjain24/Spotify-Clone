@@ -164,4 +164,15 @@ nav ul li{
         width: 100%;
         align-items: center;
     }
+    .bottom {
+        padding: 1rem;
+        box-sizing: border-box;
+        min-height: 130px;
+        height: auto;
+    }
+    .songInfo {
+        position: unset;
+        left: unset;
+        margin: 1rem 0 0;
+    }
   }
