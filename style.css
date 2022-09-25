@@ -110,7 +110,7 @@ nav ul li{
 .songItem img{
     width: 43px;
     margin: 0 23px;
-    border-radius: 5px;
+    border-radius: 100%;
 }
 
 .timestamp{

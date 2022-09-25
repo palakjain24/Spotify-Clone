@@ -29,6 +29,8 @@ songs.map((list, index) => {
     }, 100);
 });
 
+
+
 setTimeout(() => {
     songItems.forEach((element, i)=> { 
         element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
