@@ -22,12 +22,12 @@ let songs=[
     {songName:"Yeh Aaina", filePath: "assets/songs/Yeh Aaina.mp3", coverPath:"assets/covers/ye aaina.jpg", duration: 0}
 ]
 
-songs.map((list, index) => {
-    let audio_duration = new Audio(list.filePath);
-    setTimeout(() => {
-        songs[index].duration = (audio_duration.duration/60).toPrecision(3);
-    }, 100);
-});
+// songs.map((list, index) => {
+//     let audio_duration = new Audio(list.filePath);
+//     setTimeout(() => {
+//         songs[index].duration = (audio_duration.duration/60).toPrecision(3);
+//     }, 100);
+// });
 
 
 
@@ -35,7 +35,7 @@ setTimeout(() => {
     songItems.forEach((element, i)=> { 
         element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
         element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
-        element.getElementsByClassName("timestamp")[0].innerText = songs[i].duration; 
+        // element.getElementsByClassName("timestamp")[0].innerText = songs[i].duration; 
     });
 }, 500);
  
